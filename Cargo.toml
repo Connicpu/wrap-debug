@@ -1,6 +1,6 @@
 [package]
 name = "wrap-debug"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Connor Hilarides <connorcpu@live.com>"]
 description = "Implements debug by printing its type name instead"
 repository = "https://github.com/Connorcpu/wrap-debug"
