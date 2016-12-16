@@ -2,6 +2,7 @@
 
 use std::fmt::{Debug, Formatter, Result};
 use std::intrinsics::type_name;
+use std::ops::{Deref, DerefMut};
 
 #[derive(Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
 pub struct WrapDebug<T>(T);
@@ -9,6 +10,19 @@ pub struct WrapDebug<T>(T);
 impl<T> WrapDebug<T> {
     pub fn into_inner(self) -> T {
         self.0
+    }
+}
+
+impl<T> Deref for WrapDebug<T> {
+    type Target = T;
+    fn deref(&self) -> &T {
+        &self.0
+    }
+}
+
+impl<T> DerefMut for WrapDebug<T> {
+    fn deref_mut(&mut self) -> &mut T {
+        &mut self.0
     }
 }
 
