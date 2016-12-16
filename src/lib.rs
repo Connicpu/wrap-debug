@@ -5,7 +5,7 @@ use std::intrinsics::type_name;
 use std::ops::{Deref, DerefMut};
 
 #[derive(Copy, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
-pub struct WrapDebug<T>(T);
+pub struct WrapDebug<T>(pub T);
 
 impl<T> WrapDebug<T> {
     pub fn into_inner(self) -> T {
